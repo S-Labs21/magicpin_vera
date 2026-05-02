@@ -1,7 +1,5 @@
 # Magicpin Vera AI Bot Challenge
 
-A complete, production-ready full-stack solution for the magicpin AI Challenge.
-
 ## Architecture
 
 This application consists of two main parts:
@@ -35,12 +33,6 @@ You can deploy the application as a single Web Service. The FastAPI server autom
    uvicorn main:app --host 0.0.0.0 --port $PORT
    ```
 
-### Option 2: Docker
-We provide a `Dockerfile` that uses a multi-stage build. It first compiles the React frontend and then bundles it into a lightweight Python 3.11 image running Uvicorn.
-```bash
-docker build -t magicpin-vera .
-docker run -p 8080:8080 magicpin-vera
-```
 
 ## Running Locally
 
@@ -60,11 +52,6 @@ npm install
 npm run dev
 ```
 
-### Judge Simulator
-If you want to run the provided judge harness:
-```bash
-python judge_simulator.py
-```
 
 ## How to use the Dashboard
 
@@ -74,8 +61,3 @@ Open `http://localhost:8080` (or your Vite dev server `http://localhost:5173`) i
 3. **Tick Simulator:** Enter a trigger ID and run `/v1/tick`. View the beautifully formatted generated message actions (body, cta, rationale, etc).
 4. **Reply Simulator:** Simulate incoming merchant/customer messages to `/v1/reply`. Test how it handles positive ("Yes"), negative ("Stop"), auto-replies ("Thank you for contacting"), and questions.
 
-## Environment Variables
-
-- `CONTACT_EMAIL`: Email exposed in `/v1/metadata`.
-- `OPENAI_API_KEY`: (Optional) Can be added to upgrade the rule-based composer.
-- `VITE_API_BASE_URL`: (Optional) For separate frontend/backend deployments. Set to your backend URL (e.g. `https://your-api.onrender.com`).
