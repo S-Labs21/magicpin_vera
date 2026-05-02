@@ -205,7 +205,7 @@ async def serve_dashboard():
         return FileResponse(index_file)
     return JSONResponse(
         status_code=200,
-        content={"message":"Magicpin Vera Bot API is running. Frontend build not found. Please run 'npm run build' inside the frontend directory."}
+        content={"message":"Magicpin Vera Bot API is running. Check endpoints '/v1/tick', '/v1/healthz', '/v1/metadata', '/v1/context', '/v1/reply', '/debug/*'"}
     )
 
 # # Mount static files correctly so assets load
