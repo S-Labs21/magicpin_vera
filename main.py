@@ -208,7 +208,7 @@ async def serve_dashboard():
         content={"error": "Frontend build not found. Please run 'npm run build' inside the frontend directory."}
     )
 
-# Mount static files correctly so assets load
-if os.path.exists(frontend_dist):
-    app.mount("/", StaticFiles(directory=frontend_dist, html=True), name="static")
+# # Mount static files correctly so assets load
+# if os.path.exists(frontend_dist):
+#     app.mount("/", StaticFiles(directory=frontend_dist, html=True), name="static")
 
